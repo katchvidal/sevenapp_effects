@@ -13,11 +13,6 @@ export class ListaComponent implements OnInit {
   constructor(public UsuarioService: UsuarioService) { }
 
   ngOnInit(): void {
-    this.UsuarioService.getUser().subscribe(
-      users => {
-        console.log( users )
-        this.usuarios = users
-      }
-    )
+    this.UsuarioService.getUser()
   }
 }
