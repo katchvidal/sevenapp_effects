@@ -1,47 +1,45 @@
 import { createReducer, on } from "@ngrx/store";
 import { Usuario } from "src/app/models/usuario.model";
-import * as fromUsuarios from '../actions/index'
+import { LOAD_USER, LOAD_USER_FAIL, LOAD_USER_SUCCESS } from "../actions/index";
 
 export interface UsuariosState {
-    users: Usuario[];
+    users: Usuario[] | any;
     loaded: boolean;
     loading: boolean;
-    error : any;
+    error: any;
 }
 
-const initialState : UsuariosState = {
-    users : [],
-    loaded : false,
-    loading : false,
-    error:  null
+const initialState: UsuariosState = {
+    users: [],
+    loaded: false,
+    loading: false,
+    error: null
 }
 
-export const UsuarioReducer = createReducer(
+export const UsuariosReducer = createReducer(
     initialState,
 
-    on(fromUsuarios.LOAD_USER, ( state : any ) => {
+    on(LOAD_USER, state => ({ ...state, loading: true, error: null })),
+
+    on(LOAD_USER_SUCCESS, (state, { users }) => {
         return {
-            ...state,
-           loading : true,         
+            users: [...users],
+            loaded: true,
+            loading: false,
+            error: null
         }
     }),
 
-    on(fromUsuarios.LOAD_USER_SUCCESS, ( state: any, { usuarios } : any ) => {
+    on(LOAD_USER_FAIL, (state: any, { payload }) => {
         return {
-            ...state,
-            loading: false,
-            loaded: true,
-            users: [...usuarios]
-        }
-    }),
-    
-    on(fromUsuarios.LOAD_USER_FAIL, ( state : any) => {
-        return {
-            ...state,
             loaded: false,
             loading: false,
-            users: null,
-            error : state.payload
+            users: [],
+            error: {
+                status: payload.status,
+                message: payload.message,
+                url: payload.url
+            }
         }
     })
 

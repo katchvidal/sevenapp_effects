@@ -8,6 +8,7 @@
 ```
     -> ng add @ngrx/store@latest
     -> ng add @ngrx/store-devtools@latest
+    -> ng add @ngrx/effects@latest
 
     1.  Que son los Effectos ( 3era ley de Newton a toda accion hay una reaccion )
     1.1 Accion -> Escucha el Effecto -> Accion / Servicio -> Regresa al Reducer
