@@ -22,4 +22,7 @@
 ```
 - Github permite hostear aplicaciones de tipo ( plana [HTML, CSS, JAVASCRIPT])
 1.  Generar ng build
+2.  Github Pages 
+3.  Add base  <base href="sevenapp_effects/"> index.html
+4.  config docs replace dist name in folder production build
 ```
