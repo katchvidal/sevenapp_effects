@@ -25,4 +25,8 @@
 2.  Github Pages 
 3.  Add base  <base href="sevenapp_effects/"> index.html
 4.  config docs replace dist name in folder production build
+    Result -> https://katchvidal.github.io/sevenapp_effects/home
+
+    TODO: 
+    1. Implement redirection to Hash to evit reloaded a url
 ```
