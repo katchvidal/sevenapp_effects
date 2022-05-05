@@ -17,3 +17,9 @@
         Store Simple: componente -> accion ( servicio ) -> reducer -> Estado ( Nuevo o Actual ) -> Regresa al Componente
         Effectos: componente -> accion ( servicio ) <----> Effectos - Servicio - Servidor -> Regresa al Reducer 
 ```
+
+##  Despliegue GitHub Pages
+```
+- Github permite hostear aplicaciones de tipo ( plana [HTML, CSS, JAVASCRIPT])
+1.  Generar ng build
+```
